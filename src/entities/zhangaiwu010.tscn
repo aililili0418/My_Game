@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://tsp1qn1bwmjf"]
+
+[ext_resource type="Script" path="res://src/entities/zhangaiwu.gd" id="1_7lpxx"]
+[ext_resource type="Texture2D" uid="uid://nyx83pk8xhy4" path="res://assets/textures/elements/Wood elements/elementWood010.png" id="1_omlqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_540xl"]
+size = Vector2(72, 72)
+
+[node name="zhangaiwu010" type="RigidBody2D"]
+script = ExtResource("1_7lpxx")
+
+[node name="zhangaiwu01" type="Sprite2D" parent="."]
+texture = ExtResource("1_omlqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_540xl")

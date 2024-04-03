@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bclm484ykdmv7"]
+
+[ext_resource type="Texture2D" uid="uid://v56t8tsm7nc3" path="res://assets/textures/elements/Wood elements/elementWood012.png" id="1_v6eqk"]
+
+[sub_resource type="GDScript" id="GDScript_l5n2m"]
+script/source = "extends RigidBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_540xl"]
+size = Vector2(224, 72)
+
+[node name="zhangaiwu020" type="RigidBody2D"]
+script = SubResource("GDScript_l5n2m")
+
+[node name="zhangaiwu02" type="Sprite2D" parent="."]
+texture = ExtResource("1_v6eqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_540xl")

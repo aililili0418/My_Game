@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6ja1vaemvsi2"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_yvh3t"]
+[ext_resource type="Texture2D" uid="uid://pvijx8un6l8d" path="res://assets/textures/_backgrounds/blue_desert.png" id="2_ujhei"]
+[ext_resource type="Texture2D" uid="uid://btqmjc8bjmp4v" path="res://assets/textures/Other/grass.png" id="3_ii0t7"]
+[ext_resource type="PackedScene" uid="uid://12djmwfyxv76" path="res://src/entities/dangong.tscn" id="4_8kfag"]
+[ext_resource type="PackedScene" uid="uid://cktpslc6tjjx7" path="res://src/entities/bullet.tscn" id="5_qxgim"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5m44"]
+texture = ExtResource("3_ii0t7")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+
+[sub_resource type="TileSet" id="TileSet_17ykm"]
+tile_size = Vector2i(70, 70)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_e5m44")
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_yvh3t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -101
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -13.0
+offset_top = -422.0
+offset_right = 2833.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0.815686, 0.956863, 0.968627, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1433.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_ujhei")
+offset = Vector2(512, 512)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(716.8, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_ujhei")
+offset = Vector2(512, 512)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_17ykm")
+format = 2
+layer_0/tile_data = PackedInt32Array(589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0, 589843, 2, 0, 589844, 2, 0, 589845, 2, 0, 589846, 2, 0, 589847, 2, 0, 589848, 2, 0, 589849, 2, 0, 589850, 2, 0, 589851, 2, 0, 589852, 2, 0, 589853, 2, 0, 589854, 2, 0, 589855, 2, 0, 589856, 2, 0, 589857, 2, 0, 589858, 2, 0, 589859, 2, 0, 589860, 2, 0, 589861, 2, 0, 589862, 2, 0, 589863, 2, 0, 589864, 2, 0, 589828, 2, 0, 589829, 2, 0, 524328, 2, 0, 458792, 2, 0, 393256, 2, 0, 327720, 2, 0, 262184, 2, 0, 196648, 2, 0, 131112, 2, 0, 65576, 2, 0, 40, 2, 0, -65496, 2, 0, -131032, 2, 0, -196568, 2, 0, -262104, 2, 0, -327640, 2, 0, -393176, 2, 0, -458712, 2, 0, 655359, 2, 0, 589823, 2, 0, 524287, 2, 0, 458751, 2, 0, 393215, 2, 0, 327679, 2, 0, 262143, 2, 0, 196607, 2, 0, 131071, 2, 0, 65535, 2, 0, -1, 2, 0, -65537, 2, 0, -131073, 2, 0, -196609, 2, 0, -262145, 2, 0, -327681, 2, 0, -393217, 2, 0, -458752, 2, 0, -458751, 2, 0, -458750, 2, 0, -458749, 2, 0, -458748, 2, 0, -458747, 2, 0, -458746, 2, 0, -458745, 2, 0, -458744, 2, 0, -458743, 2, 0, -458742, 2, 0, -458741, 2, 0, -458740, 2, 0, -458739, 2, 0, -458738, 2, 0, -458737, 2, 0, -458736, 2, 0, -458735, 2, 0, -458734, 2, 0, -458733, 2, 0, -458732, 2, 0, -458731, 2, 0, -458730, 2, 0, -458729, 2, 0, -458728, 2, 0, -458727, 2, 0, -458726, 2, 0, -458725, 2, 0, -458724, 2, 0, -458723, 2, 0, -458722, 2, 0, -458721, 2, 0, -458720, 2, 0, -458719, 2, 0, -458718, 2, 0, -458717, 2, 0, -458716, 2, 0, -458715, 2, 0, -458714, 2, 0, -458713, 2, 0)
+
+[node name="bullet" parent="." instance=ExtResource("5_qxgim")]
+position = Vector2(391, 588)
+
+[node name="bullet2" parent="." instance=ExtResource("5_qxgim")]
+position = Vector2(298, 586)
+
+[node name="dangong" parent="." instance=ExtResource("4_8kfag")]
+position = Vector2(577, 464)

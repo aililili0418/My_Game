@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp3pqsr10lkh5"]
+
+[ext_resource type="Script" path="res://src/entities/enemy.gd" id="1_lfwiq"]
+[ext_resource type="Texture2D" uid="uid://ckb4ioersf22b" path="res://assets/textures/Aliens/alienBlue_round.png" id="2_hjfgj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_46vb7"]
+radius = 40.0
+
+[sub_resource type="GDScript" id="GDScript_7dumy"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="enemy" type="RigidBody2D"]
+script = ExtResource("1_lfwiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(264, 160)
+scale = Vector2(1.10714, 1.10714)
+texture = ExtResource("2_hjfgj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(264, 160)
+shape = SubResource("CircleShape2D_46vb7")
+script = SubResource("GDScript_7dumy")
