@@ -8,6 +8,7 @@ size = Vector2(72, 72)
 
 [node name="zhangaiwu010" type="RigidBody2D"]
 script = ExtResource("1_7lpxx")
+required_impacts = 2
 
 [node name="zhangaiwu01" type="Sprite2D" parent="."]
 texture = ExtResource("1_omlqu")

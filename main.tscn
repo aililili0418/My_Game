@@ -26,11 +26,10 @@ script = ExtResource("1_yvh3t")
 layer = -101
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -13.0
-offset_top = -422.0
-offset_right = 2833.0
-offset_bottom = 24.0
-mouse_filter = 2
+offset_top = -424.0
+offset_right = 2846.0
+offset_bottom = 22.0
+mouse_filter = 1
 color = Color(0.815686, 0.956863, 0.968627, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
